@@ -9,7 +9,7 @@
     ],
     "require": {
         "consolibyte/quickbooks": "^2.0",
-        "doctrine/dbal": "^2.5"
+        "doctrine/dbal": "~2.0" 
     },
     "require-dev": {
         "phpspec/phpspec": "^2.2"

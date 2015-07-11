@@ -1,0 +1,23 @@
+{
+    "name": "jfortunato/quickbooks-desktop-bundle",
+    "description": "Symfony2 helpers for working with the QuickBooks WebConnector",
+    "authors": [
+        {
+            "name": "Justin Fortunato",
+            "email": "jfortunato25@gmail.com"
+        }
+    ],
+    "require": {
+        "consolibyte/quickbooks": "^2.0",
+        "doctrine/dbal": "^2.5"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^2.2"
+    },
+    "autoload": {
+        "psr-4": { "Jfortunato\\QuickBooksDesktopBundle\\": "" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Jfortunato\\QuickBooksDesktopBundle\\spec\\": "spec/" }
+    }
+}

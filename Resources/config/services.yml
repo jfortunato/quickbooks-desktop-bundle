@@ -1,0 +1,19 @@
+services:
+    jfortunato_quick_books_desktop.config:
+        class: Jfortunato\QuickBooksDesktopBundle\Config\Config
+        arguments: [%jfortunato_quick_books_desktop%, @doctrine.dbal.default_connection]
+
+    jfortunato_quick_books_desktop.factory.wrapper:
+        class: Jfortunato\QuickBooksDesktopBundle\Factory\WrapperFactory
+        arguments: [@jfortunato_quick_books_desktop.config]
+
+    jfortunato_quick_books_desktop.wrapper.server:
+        class: Jfortunato\QuickBooksDesktopBundle\Wrapper\Server
+        factory_service: jfortunato_quick_books_desktop.factory.wrapper
+        factory_method: newServer
+        arguments: [@jfortunato_quick_books_desktop.mapper]
+
+    jfortunato_quick_books_desktop.wrapper.utilities:
+        class: Jfortunato\QuickBooksDesktopBundle\Wrapper\Server
+        factory_service: jfortunato_quick_books_desktop.factory.wrapper
+        factory_method: newUtilities

@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "consolibyte/quickbooks": "^2.0",
+        "consolibyte/quickbooks": "dev-master",
         "doctrine/dbal": "~2.0" 
     },
     "require-dev": {

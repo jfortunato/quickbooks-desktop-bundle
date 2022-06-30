@@ -1,7 +1,11 @@
 services:
+    Jfortunato\QuickBooksDesktopBundle\Config\Config:
+        public: false
+        arguments: ['%jfortunato_quick_books_desktop%', "@doctrine.dbal.default_connection"]
+
     jfortunato_quick_books_desktop.config:
-        class: Jfortunato\QuickBooksDesktopBundle\Config\Config
-        arguments: [%jfortunato_quick_books_desktop%, "@doctrine.dbal.default_connection"]
+        alias: Jfortunato\QuickBooksDesktopBundle\Config\Config
+        public: true
 
     jfortunato_quick_books_desktop.factory.wrapper:
         class: Jfortunato\QuickBooksDesktopBundle\Factory\WrapperFactory

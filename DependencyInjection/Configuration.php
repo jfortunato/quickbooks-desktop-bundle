@@ -17,8 +17,8 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('jfortunato_quick_books_desktop');
+        $treeBuilder = new TreeBuilder('jfortunato_quick_books_desktop');
+        $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
             ->children()

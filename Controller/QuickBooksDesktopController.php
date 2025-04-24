@@ -3,10 +3,10 @@
 namespace Jfortunato\QuickBooksDesktopBundle\Controller;
 
 use Jfortunato\QuickBooksDesktopBundle\Wrapper\Server;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
-class QuickBooksDesktopController extends Controller
+class QuickBooksDesktopController extends AbstractController
 {
     public function qbwcAction(Server $server)
     {

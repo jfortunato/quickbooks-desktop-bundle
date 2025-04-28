@@ -21,3 +21,5 @@ services:
 
     Jfortunato\QuickBooksDesktopBundle\Controller\QuickBooksDesktopController:
         tags: ['controller.service_arguments']
+        calls:
+            - [setContainer, ['@service_container']]

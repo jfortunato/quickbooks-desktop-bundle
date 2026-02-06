@@ -2,8 +2,6 @@
 
 namespace Jfortunato\QuickBooksDesktopBundle\Config;
 
-use Doctrine\DBAL\Connection;
-
 class Config implements ConfigInterface
 {
     /**
@@ -12,14 +10,14 @@ class Config implements ConfigInterface
     private $config;
 
     /**
-     * @var Connection
+     * @var mixed
      */
-    private $connection;
+    private $dsnOrConnection;
 
-    public function __construct(array $config, Connection $connection)
+    public function __construct(array $config, $dsnOrConnection)
     {
         $this->config = array_merge($this->defaults(), $config);
-        $this->connection = $connection;
+        $this->dsnOrConnection = $dsnOrConnection;
     }
 
     public function getLogLevel()
@@ -42,15 +40,12 @@ class Config implements ConfigInterface
         return $this->config['driver_options'];
     }
 
-    public function getDsn()
+    /**
+     * @return mixed
+     */
+    public function getDsnOrConnection()
     {
-        $driver = $this->connection->getDriver()->getName();
-        $user = $this->connection->getUsername();
-        $pass = $this->connection->getPassword();
-        $host = $this->connection->getHost();
-        $db = $this->connection->getDatabase();
-
-        return "{$driver}://{$user}:{$pass}@{$host}/{$db}";
+        return $this->dsnOrConnection;
     }
 
     public function getUser()

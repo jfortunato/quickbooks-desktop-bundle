@@ -1,7 +1,7 @@
 services:
     Jfortunato\QuickBooksDesktopBundle\Config\Config:
         public: false
-        arguments: ['%jfortunato_quick_books_desktop%', "@doctrine.dbal.default_connection"]
+        arguments: ['%jfortunato_quick_books_desktop%', '@jfortunato_quick_books_desktop.dsn_or_connection']
 
     jfortunato_quick_books_desktop.config:
         alias: Jfortunato\QuickBooksDesktopBundle\Config\Config

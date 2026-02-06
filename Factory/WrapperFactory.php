@@ -22,7 +22,7 @@ class WrapperFactory implements WrapperFactoryInterface
     public function newServer(MapperInterface $mapper)
     {
         $server = new \QuickBooks_WebConnector_Server(
-            $this->config->getDsn(),
+            $this->config->getDsnOrConnection(),
             $mapper->getMap(),
             $mapper->getErrMap(),
             $mapper->getHookMap(),

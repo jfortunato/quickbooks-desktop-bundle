@@ -5,14 +5,13 @@ namespace spec\Jfortunato\QuickBooksDesktopBundle\Config;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Driver;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Jfortunato\QuickBooksDesktopBundle\Config\ConfigInterface;
 
 class ConfigSpec extends ObjectBehavior
 {
-    function let(Connection $connection)
+    function let()
     {
-        $this->beConstructedWith([], $connection);
+        $this->beConstructedWith([], 'dsn');
     }
 
     function it_is_initializable()
@@ -73,15 +72,8 @@ class ConfigSpec extends ObjectBehavior
         $this->getPass()->shouldReturn('foopass');
     }
 
-    function it_should_get_dsn_from_connection($connection, Driver $driver)
+    function it_should_get_the_dsn_or_connection()
     {
-        $connection->getDriver()->willReturn($driver);
-        $driver->getName()->willReturn('mysqli');
-        $connection->getUsername()->willReturn('foo');
-        $connection->getPassword()->willReturn('password');
-        $connection->getHost()->willReturn('localhost');
-        $connection->getDatabase()->willReturn('testdb');
-
-        $this->getDsn()->shouldReturn('mysqli://foo:password@localhost/testdb');
+        $this->getDsnOrConnection()->shouldReturn('dsn');
     }
 }

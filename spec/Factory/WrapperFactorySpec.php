@@ -5,13 +5,12 @@ namespace spec\Jfortunato\QuickBooksDesktopBundle\Factory;
 use Jfortunato\QuickBooksDesktopBundle\Config\ConfigInterface;
 use Jfortunato\QuickBooksDesktopBundle\Factory\WrapperFactoryInterface;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class WrapperFactorySpec extends ObjectBehavior
 {
     function let(ConfigInterface $config)
     {
-        $this->beConstructedWith($config);
+        $this->beConstructedWith($config, "sqlite::memory:");
     }
 
     function it_is_initializable()

@@ -11,7 +11,7 @@ class QuickBooksDesktopController extends AbstractController
     public function qbwcAction(Server $server)
     {
         // Set up our queue singleton
-        \QuickBooks_WebConnector_Queue_Singleton::initialize($this->container->get('jfortunato_quick_books_desktop.config')->getDsn());
+        \QuickBooks_WebConnector_Queue_Singleton::initialize($this->container->get('jfortunato_quick_books_desktop.dsn_or_connection'));
 
         $handled = $server->handle(true, true);
 

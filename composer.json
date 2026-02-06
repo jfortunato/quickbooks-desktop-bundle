@@ -8,8 +8,7 @@
         }
     ],
     "require": {
-        "consolibyte/quickbooks": "dev-master",
-        "doctrine/dbal": "~2.0" 
+        "consolibyte/quickbooks": "dev-master" 
     },
     "require-dev": {
         "phpspec/phpspec": "^8.0"

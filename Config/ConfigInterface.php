@@ -12,7 +12,7 @@ interface ConfigInterface
 
     public function getDriverOptions();
 
-    public function getDsn();
+    public function getDsnOrConnection();
 
     public function getUser();
 
